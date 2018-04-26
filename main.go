@@ -19,11 +19,10 @@ func main() {
 	server := newChatServer(whomst, net.JoinHostPort("", port))
 
 	if len(flag.Args()) > 2 {
-		connectPort := flag.Args()[2]
-		connectAddr := fmt.Sprintf("ws://localhost:%s/chat", connectPort)
+		connectAddr := flag.Args()[2]
 
 		go func() {
-			server.Dial(connectAddr)
+			server.Dial(fmt.Sprintf("ws://%s/chat", connectAddr))
 		}()
 	}
 
