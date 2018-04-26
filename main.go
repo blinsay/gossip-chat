@@ -38,7 +38,7 @@ func main() {
 
 			if len(updates.Messages) > 0 {
 				for _, msg := range updates.Messages {
-					fmt.Println(msg.Whomst, "::", msg.Txt)
+					fmt.Printf("(%s, %d) :: %s\n", msg.Whomst, msg.Clock, msg.Txt)
 				}
 			}
 
